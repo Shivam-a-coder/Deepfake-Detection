@@ -10,37 +10,37 @@ Deepfake videos manipulate faces in videos to create fake content, posing signif
 Our method involves the following steps:
 
 ### 1. **Data Preprocessing:**
-- ○ Detect faces in video frames using Haar cascades.
-- ○ Crop and resize faces to 224x224 pixels.
-- ○ Convert frames to grayscale.
-- ○ Calculate optical flow between frames.
-- ○ Save optical flow fields as `.npy` files.
+ ○ Detect faces in video frames using Haar cascades.
+ ○ Crop and resize faces to 224x224 pixels.
+ ○ Convert frames to grayscale.
+ ○ Calculate optical flow between frames.
+ ○ Save optical flow fields as `.npy` files.
 
-![Image](https://github.com/user-attachments/assets/81b01840-db7e-4b24-876f-0eb46f0b4a7c)
+![Image](https://github.com/user-attachments/assets/9795792f-4132-44cd-8bd2-c4b23168f89c)
 
 ### 2. **Model Architecture:**
-- ○ **Upper Branch:** Extracts basic spatial features using convolution and MBConv blocks.
-- ○ **Lower Branch:** Uses self-attention mechanisms to focus on crucial facial areas.
-- ○ Concatenation of features from both branches.
-- ○ Global Average Pooling (GAP) and classification using an activation function.
+ ○ **Upper Branch:** Extracts basic spatial features using convolution and MBConv blocks.
+ ○ **Lower Branch:** Uses self-attention mechanisms to focus on crucial facial areas.
+ ○ Concatenation of features from both branches.
+ ○ Global Average Pooling (GAP) and classification using an activation function.
 
 ## Datasets
 We evaluated our model on two datasets:
 
-- ● **UADFV Dataset:** Includes 49 real and 49 fake videos created using FaceSwap.
-- ● **Celeb-DF V1 Dataset:** Contains 158 real and 795 fake videos created using advanced GAN-based techniques.
+ ● **UADFV Dataset:** Includes 49 real and 49 fake videos created using FaceSwap.
+ ● **Celeb-DF V1 Dataset:** Contains 158 real and 795 fake videos created using advanced GAN-based techniques.
 
 ## Results
 Our model achieved the following results:
 
-- ● **Celeb-DF V1 Dataset:**
-  - ○ Accuracy: 79.88%
-  - ○ Precision: 90%
-  - ○ Recall: 76%
-- ● **UADFV Dataset:**
-  - ○ Accuracy: 85.26%
-  - ○ Precision: 95%
-  - ○ Recall: 76%
+ ● **Celeb-DF V1 Dataset:**
+   ○ Accuracy: 79.88%
+   ○ Precision: 90%
+   ○ Recall: 76%
+ ● **UADFV Dataset:**
+   ○ Accuracy: 85.26%
+   ○ Precision: 95%
+   ○ Recall: 76%
 
 ## Conclusion
 The SADFFD Network is a robust tool for deepfake detection, capable of capturing temporal inconsistencies and spatial deviations. Future work includes refining the model, expanding the datasets, and integrating the system into real-time applications.
